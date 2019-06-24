@@ -19,6 +19,9 @@ ASANFLAGS += -fno-omit-frame-pointer
 test: tests.out
 	@./tests.out
 
+mytest: mytests.out
+	@./mytests.out
+
 memcheck: test/*.c src/*.c src/*.h
 	@echo Compiling $@
 	@$(CC) $(ASANFLAGS) $(CFLAGS) src/*.c test/vendor/unity.c test/*.c -o memcheck.out $(LIBS)
@@ -31,3 +34,8 @@ clean:
 tests.out: test/*.c src/*.c src/*.h
 	@echo Compiling $@
 	@$(CC) $(CFLAGS) src/*.c test/vendor/unity.c test/*.c -o tests.out $(LIBS)
+
+
+mytests.out: mytest/*.c
+	@echo Compiling $@
+	@$(CC) $(CFLAGS) mytest/*.c -o mytests.out $(LIBS)

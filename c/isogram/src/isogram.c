@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 bool is_isogram(const char phrase[]) {
-	printf("%s", phrase);
+    
 	// handle NULL
 	if (phrase == NULL)
 		return false;
@@ -13,7 +13,6 @@ bool is_isogram(const char phrase[]) {
 
 	char *c = (char *)phrase;
 	// count occurrences of each letter
-
 	int str_length = 0;
 	
 	while (*c) {
@@ -22,7 +21,7 @@ bool is_isogram(const char phrase[]) {
 		// convert to lowercase
 		int ascii_code = (int) tolower(*c);
 
-		// only add alphabetic characters
+		// only count alphabetic characters
 		if (ascii_code >= 97 && ascii_code <= 122)
 			count[ascii_code - 97] = count[ascii_code - 97] + 1;
 		 
