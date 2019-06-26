@@ -1,14 +1,7 @@
-﻿using System;
-
-public static class TwoFer
+﻿public static class TwoFer
 {
-    public static string Speak()
-    {
-		return "One for you, one for me.";	
-    }
-
-	public static string Speak(string name)
+	public static string Speak(string name = "you")
 	{
-		return String.Format("One for {0}, one for me.", name);
+		return $"One for {name}, one for me.";
 	}
 }
