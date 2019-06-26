@@ -19,18 +19,16 @@ bool is_isogram(const char phrase[]) {
 		// convert to lowercase
 		int ascii_code = (int) tolower(*c);
 
-		// only count alphabetic characters
-		if (isalpha(*c))
-			count[ascii_code - ASCII_OFFSET] = count[ascii_code - ASCII_OFFSET] + 1;
-		
+		// only count alpha chars
+		if (isalpha(*c)) {
+			// letter has not occurred before
+			if (count[ascii_code - ASCII_OFFSET] == 0)
+				count[ascii_code - ASCII_OFFSET]++;
+			// letter has been seen before; not an isogram
+			else
+				return false;
+		}
 	}
 
-	// check if isogram
-	for (int i = 0; i < 26; i++) {
-
-		// if a letter occurs more than once, it is not an isogram
-		if (count[i] > 1)
-			return false;
-	}
 	return true;
 }
