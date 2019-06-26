@@ -14,10 +14,7 @@ bool is_isogram(const char phrase[]) {
 	// lookup table for character tally
     int count[26] = {0};
 
-	//int str_length = 0;
 	for (char *c = (char *)phrase; *c; c++) {
-	
-		//str_length++;
 
 		// convert to lowercase
 		int ascii_code = (int) tolower(*c);
@@ -27,10 +24,6 @@ bool is_isogram(const char phrase[]) {
 			count[ascii_code - ASCII_OFFSET] = count[ascii_code - ASCII_OFFSET] + 1;
 		
 	}
-
-	// handle empty string
-	//if (str_length < 1)
-	//	return true;
 
 	// check if isogram
 	for (int i = 0; i < 26; i++) {
