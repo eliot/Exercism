@@ -23,7 +23,7 @@ public static class Isogram
 					letter_count.Add(c);
 			}
 		}
-		return true;
-			
+	    
+		return true;	
     }
 }
