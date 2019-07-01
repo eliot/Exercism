@@ -23,6 +23,8 @@ public static class ResistorColor
 
     public static string[] Colors()
     {
-        return new[] { "black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white" };
+        string[] keys = new string[ResistorColor.colorMap.Keys.Count];
+        ResistorColor.colorMap.Keys.CopyTo(keys, 0);
+        return keys;
     }
 }
